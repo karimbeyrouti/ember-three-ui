@@ -1,6 +1,6 @@
 {
   "name": "ember-three-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ThreeJS ember template library",
   "keywords": [
     "ember-addon"
