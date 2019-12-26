@@ -1,0 +1,10 @@
+
+{{#each this.particles as |particlesData|}}
+  <EmberThree::Objects::Points
+    @scale={{particlesData.scale}}
+    @rotation={{particlesData.rotation}}
+    @parent={{@parent}}
+    @material={{particlesData.material}}
+    @geometry={{particlesData.geometry}}
+  />
+{{/each}}

@@ -1,0 +1,33 @@
+<main {{will-destroy this.destroyElement}}>
+  <EmberThree
+    @id={{this.sceneId}}
+    @rendererParams={{this.rendererParams}}
+    as |s|
+  >
+    <EmberThree::Lights::DirectionalLight
+      @parent={{s.scene}}
+      @position={{this.lightPosition}}
+    />
+    <EmberThree::Cameras::PerspectiveCamera
+      @position={{this.cameraPosition}}
+    />
+    <EmberThree::Core::Object3d
+      @parent={{s.scene}}
+      @rotation={{this.containerRotation}}
+      as |meshContainer|
+    >
+      {{#each this.cubesAppState.objectProperties as |properties|}}
+        <EmberThree::Objects::Mesh
+          @rotation={{properties.r}}
+          @position={{properties.p}}
+          @scale={{properties.s}}
+          @parent={{meshContainer}}
+          @material={{this.material}}
+          @geometry={{this.geometry}}
+        />
+      {{/each}}
+    </EmberThree::Core::Object3d>
+  </EmberThree>
+</main>
+
+<EmberThreeDemo::Demos::Controls::Cube @onUpdate={{this.onCountUpdate}}/>

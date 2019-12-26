@@ -1,0 +1,26 @@
+
+<main {{will-destroy this.destroyElement}}>
+  <EmberThree
+    @id={{this.sceneId}}
+    @rendererParams={{this.rendererParams}}
+    as |emberThree|
+  >
+
+    <EmberThree::Cameras::PerspectiveCamera
+      @position={{this.cameraPosition}}
+      @target={{this.cameraTarget}}
+    />
+
+    {{#each this.particles as |particlesData|}}
+      <EmberThree::Objects::Points
+        @rotation={{particlesData.rotation}}
+        @parent={{emberThree.scene}}
+        @material={{particlesData.material}}
+        @geometry={{particlesData.geometry}}
+      />
+    {{/each}}
+
+
+  </EmberThree>
+</main>
+

@@ -1,0 +1,67 @@
+
+<main {{will-destroy this.destroyElement}}>
+  <EmberThree
+    @id={{this.sceneId}}
+    @rendererParams={{this.rendererParams}}
+    as |emberThree|
+  >
+    <EmberThree::Lights::SpotLight
+      @shadow={{spotLightShadow}}
+      @parent={{emberThree.scene}}
+      @position={{this.spotLightPosition}}
+      @target={{this.spotLightTarget}}
+      @distance={{this.spotLightDistance}}
+      @intensity={{1.25}}
+      @angle={{0.7853}}
+      @penumbra={{0.4}}
+      @castShadow={{true}}
+      as |spotLight|
+    >
+      {{!--
+      <EmberThree::Helpers::SpotLightHelper
+        @parent={{emberThree.scene}}
+        @light={{spotLight}}
+      />
+      --}}
+    </EmberThree::Lights::SpotLight>
+
+    <EmberThree::Cameras::PerspectiveCamera
+      @position={{this.cameraPosition}}
+      @target={{this.cameraTarget}}
+    />
+
+    <EmberThree::Core::Object3d
+      @parent={{emberThree.scene}}
+      @rotation={{this.containerRotation}}
+      as |meshContainer|
+    >
+
+      <EmberThreeDemo::Demos::Objects::Snow
+        @parent={{meshContainer}}
+        @sceneId={{this.sceneId}}
+      />
+
+      {{#each this.cubes as |cubeProperties|}}
+        <EmberThree::Objects::Mesh
+          @rotation={{cubeProperties.rotation}}
+          @position={{cubeProperties.position}}
+          @scale={{cubeProperties.scale}}
+          @parent={{meshContainer}}
+          @material={{cubeProperties.material}}
+          @geometry={{this.boxBufferGeometry}}
+          @castShadow={{true}}
+          @receiveShadow={{true}}
+        />
+      {{/each}}
+
+      <EmberThree::Objects::Mesh
+        @parent={{meshContainer}}
+        @material={{this.planeMaterial}}
+        @geometry={{this.planeGeometry}}
+        @rotation={{this.planeRotation}}
+        @receiveShadow={{true}}
+      />
+    </EmberThree::Core::Object3d>
+  </EmberThree>
+</main>
+
