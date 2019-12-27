@@ -4202,17 +4202,7 @@ return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Supe
 e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&a(e,t)}(t,e),u=t,(c=[{key:"init",value:function(){this.didReceiveArgs()}},{key:"didReceiveArgs",value:function(){var e=this.args,t=e.rotation,n=e.position,r=e.parent,i=e.scale
 this._object3D&&(t&&this._object3D.rotation.set(t.x,t.y,t.z),n&&this._object3D.position.set(n.x,n.y,n.z),i&&this._object3D.scale.set(i.x,i.y,i.z),r!==this._parent&&(this.remove(this._parent,this._object3D),this.add(r,this._object3D),this._parent=r))}},{key:"add",value:function(e,t){e&&t&&e.add(t)}},{key:"remove",value:function(e,t){e&&t&&e.remove(t)}},{key:"willDestroy",value:function(){this._parent&&this.remove(this._parent,this.object3D)}},{key:"applySettingsToObject",value:function(e,t){if(t)for(var r=Object.keys(t),i=r.length,o=0;o<i;o++){var a=r[o],s=t[a]
 "object"!==n(s)&&(e[a]=s)}}},{key:"object3D",get:function(){return this._object3D},set:function(e){this._object3D=e}}])&&r(u.prototype,c),l&&r(u,l),t}(t.LifeCycleComponent)
-e.default=u})),define("ember-three-ui/services/cubes-app-state",["exports","ember-three-ui/utils/utils"],(function(e,t){"use strict"
-var n,r,i
-function o(e){return(o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function a(e,t,n,r){n&&Object.defineProperty(e,t,{enumerable:n.enumerable,configurable:n.configurable,writable:n.writable,value:n.initializer?n.initializer.call(r):void 0})}function s(e,t){for(var n=0;n<t.length;n++){var r=t[n]
-r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}function u(e){return(u=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function c(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
-return e}function l(e,t){return(l=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}function h(e,t,n,r,i){var o={}
-return Object.keys(r).forEach((function(e){o[e]=r[e]})),o.enumerable=!!o.enumerable,o.configurable=!!o.configurable,("value"in o||o.initializer)&&(o.writable=!0),o=n.slice().reverse().reduce((function(n,r){return r(e,t,n)||n}),o),i&&void 0!==o.initializer&&(o.value=o.initializer?o.initializer.call(i):void 0,o.initializer=void 0),void 0===o.initializer&&(Object.defineProperty(e,t,o),o=null),o}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-var f=(r=h((n=function(e){function n(){var e
-return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,n),e=function(e,t){return!t||"object"!==o(t)&&"function"!=typeof t?c(e):t}(this,u(n).apply(this,arguments)),a(c(e),"count",r,c(e)),a(c(e),"objectProperties",i,c(e)),e.updateProperties(),e}var h,f,p
-return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
-e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&l(e,t)}(n,Ember.Service),h=n,(f=[{key:"updateCount",value:function(e){this.count=e,this.updateProperties()}},{key:"updateProperties",value:function(){this.objectProperties=(0,t.newProperties)(this.count)}}])&&s(h.prototype,f),p&&s(h,p),n}()).prototype,"count",[Ember._tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 100}}),i=h(n.prototype,"objectProperties",[Ember._tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),n)
-e.default=f})),define("ember-three-ui/services/ember-three/-lib/ember-three-scene",["exports","ember-three-ui/services/ember-three/-lib/request-animation-frame","three"],(function(e,t,n){"use strict"
+e.default=u})),define("ember-three-ui/services/ember-three/-lib/ember-three-scene",["exports","ember-three-ui/services/ember-three/-lib/request-animation-frame","three"],(function(e,t,n){"use strict"
 function r(e,t){var n=Object.keys(e)
 if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e)
 t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function i(e,t){for(var n=0;n<t.length;n++){var r=t[n]
@@ -4289,10 +4279,10 @@ try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t
 throw new TypeError("Invalid attempt to destructure non-iterable instance")}
 function n(e,n){var r=t(e,2),i=r[0],o=r[1]
 return n.forceNumber&&("number"!=typeof i&&(i=Number(i)),"number"!=typeof o&&(o=Number(o))),i<=o}e.default=Ember.Helper.helper(n)})),define("ember-truth-helpers/helpers/not-equal",["exports"],(function(e){"use strict"
-function t(e){return e[0]!==e[1]}Object.defineProperty(e,"__esModule",{value:!0}),e.notEqualHelper=t,e.default=Ember.Helper.helper(t)}))
-define("ember-truth-helpers/helpers/not",["exports","ember-truth-helpers/utils/truth-convert"],(function(e,t){"use strict"
+function t(e){return e[0]!==e[1]}Object.defineProperty(e,"__esModule",{value:!0}),e.notEqualHelper=t,e.default=Ember.Helper.helper(t)})),define("ember-truth-helpers/helpers/not",["exports","ember-truth-helpers/utils/truth-convert"],(function(e,t){"use strict"
 function n(e){for(var n=0,r=e.length;n<r;n++)if(!0===(0,t.default)(e[n]))return!1
-return!0}Object.defineProperty(e,"__esModule",{value:!0}),e.not=n,e.default=Ember.Helper.helper(n)})),define("ember-truth-helpers/helpers/or",["exports","ember-truth-helpers/utils/truth-convert"],(function(e,t){"use strict"
+return!0}Object.defineProperty(e,"__esModule",{value:!0}),e.not=n,e.default=Ember.Helper.helper(n)}))
+define("ember-truth-helpers/helpers/or",["exports","ember-truth-helpers/utils/truth-convert"],(function(e,t){"use strict"
 function n(e){for(var n=0,r=e.length;n<r;n++)if(!0===(0,t.default)(e[n]))return e[n]
 return e[e.length-1]}Object.defineProperty(e,"__esModule",{value:!0}),e.or=n,e.default=Ember.Helper.helper(n)})),define("ember-truth-helpers/helpers/xor",["exports","ember-truth-helpers/utils/truth-convert"],(function(e,t){"use strict"
 function n(e){return(0,t.default)(e[0])!==(0,t.default)(e[1])}Object.defineProperty(e,"__esModule",{value:!0}),e.xor=n,e.default=Ember.Helper.helper(n)})),define("ember-truth-helpers/utils/truth-convert",["exports"],(function(e){"use strict"
