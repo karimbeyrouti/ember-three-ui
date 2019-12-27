@@ -10,7 +10,6 @@ export default class DemoComponent extends Component {
   cameraPosition = new THREE.Vector3(0, 0, 5);
   geometry = new THREE.BoxGeometry(1, 1, 1);
   material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-  sceneId = 'cube-bemo';
 
   constructor() {
     super(...arguments);
