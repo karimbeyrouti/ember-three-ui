@@ -45,6 +45,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.rootURL = '/ember-three-ui/';
     // here you can enable a production-specific feature
   }
 
