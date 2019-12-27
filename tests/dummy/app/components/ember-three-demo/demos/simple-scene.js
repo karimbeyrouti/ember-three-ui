@@ -6,14 +6,14 @@ import { tracked } from '@glimmer/tracking';
 export default class DemoComponent extends Component {
   @service('ember-three/scene-manager') sceneManager;
   @tracked rotation = new THREE.Vector3();
-
+  emberThreeSceneId = 'simple-scene';
   cameraPosition = new THREE.Vector3(0, 0, 5);
   geometry = new THREE.BoxGeometry(1, 1, 1);
   material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
 
   constructor() {
     super(...arguments);
-    let emberThree = this.sceneManager.get(this.sceneId);
+    let emberThree = this.sceneManager.get(this.emberThreeSceneId);
     emberThree.addRafCallback(this.render, this);
   }
 
