@@ -54,6 +54,7 @@ export default class DemoComponent extends Component {
 }
 ```
 
+[this](https://karimbeyrouti.github.io/ember-three-ui/?id=simple-scene) is what you should see.
 
 Compatibility
 ------------------------------------------------------------------------------
