@@ -2,7 +2,11 @@ ember-three-ui
 ==============================================================================
 
 This addon enables three.js scene hierarchy to be composed in templates. 
-For example, this is the handlebars template for a simple scene:
+It currently support a small subset of the functionality provided by three.js, there
+is lots to add and improve. However, hopefully this is a solid foundation for
+future development.
+
+This is the handlebars template for a simple scene:
 
 ```handlebars
 <main>
