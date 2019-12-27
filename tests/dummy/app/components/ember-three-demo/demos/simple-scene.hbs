@@ -1,0 +1,17 @@
+<main>
+  <EmberThree
+    @id={{this.sceneId}}
+    @rendererParams={{this.rendererParams}}
+    as |emberThree|
+  >
+    <EmberThree::Cameras::PerspectiveCamera
+      @position={{this.cameraPosition}}
+    />
+    <EmberThree::Objects::Mesh
+      @rotation={{this.rotation}}
+      @parent={{emberThree.scene}}
+      @material={{this.material}}
+      @geometry={{this.geometry}}
+    />
+  </EmberThree>
+</main>

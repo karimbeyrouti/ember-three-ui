@@ -4,7 +4,14 @@ import { DEFAULT_DEMO } from '../../index';
 import { isPresent } from '@ember/utils';
 
 export default class Controls extends Component {
-  @tracked demoList = ['cubes', 'lines', 'interactive-cubes', 'shadow-cubes', 'sprites'];
+  @tracked demoList = [
+    'simple-scene',
+    'cubes',
+    'lines',
+    'interactive-cubes',
+    'shadow-cubes',
+    'sprites',
+  ];
   @tracked selectedDemoListItem = DEFAULT_DEMO;
 
   constructor() {
