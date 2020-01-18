@@ -1,5 +1,10 @@
 
 <main {{will-destroy this.destroyElement}}>
+
+  <EmberThree::Dom::HtmlElement>
+    <span>{{log 'hello'}}HELLO WORLD</span>
+  </EmberThree::Dom::HtmlElement>
+
   <EmberThree
     @id={{this.sceneId}}
     @rendererParams={{this.rendererParams}}
@@ -17,12 +22,10 @@
       @castShadow={{true}}
       as |spotLight|
     >
-      {{!--
       <EmberThree::Helpers::SpotLightHelper
         @parent={{emberThree.scene}}
         @light={{spotLight}}
       />
-      --}}
     </EmberThree::Lights::SpotLight>
 
     <EmberThree::Cameras::PerspectiveCamera
@@ -51,7 +54,9 @@
           @geometry={{this.boxBufferGeometry}}
           @castShadow={{true}}
           @receiveShadow={{true}}
-        />
+        >
+
+        </EmberThree::Objects::Mesh>
       {{/each}}
 
       <EmberThree::Objects::Mesh

@@ -80,4 +80,8 @@ export default class EmberObject3DComponent extends LifeCycleComponent {
       }
     }
   }
+
+  updateParent() {
+
+  }
 }
