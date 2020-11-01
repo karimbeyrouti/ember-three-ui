@@ -119,6 +119,8 @@ export default class EmberThreeScene {
 
     window.removeEventListener('resize', this.resizeEventDelegate);
     window.addEventListener('resize', this.resizeEventDelegate);
+
+    console.log('onInsertElement', parentElement);
   }
 
   get domElement() {
